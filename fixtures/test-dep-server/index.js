@@ -1,5 +1,6 @@
+import React from "react";
 import { TestClientInServerPackage } from "./client.js";
 
 export default async function Test() {
-	return <TestClientInServerPackage />;
+	return React.createElement(TestClientInServerPackage);
 }
