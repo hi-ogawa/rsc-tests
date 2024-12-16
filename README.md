@@ -12,21 +12,21 @@ There are two demo packages:
 
 Three test cases are:
 
-- [Client package in server](./next-vite/app/client-package-in-server/page.jsx)
-  - Import `@vitejs/test-dep-client` in the user app's server component
 - [Client package in client](./next-vite/app/client-package-in-client/page.jsx)
   - Import `@vitejs/test-dep-client` in the user app's client component
+- [Client package in server](./next-vite/app/client-package-in-server/page.jsx)
+  - Import `@vitejs/test-dep-client` in the user app's server component
 - [Client in server package](./next-vite/app/client-in-server-package/page.jsx)
   - Import `@vitejs/test-dep-server` in the user app's server component
 
-|            | Client package in server | Client package in client | Client in server package |
+|            | Client package in client | Client package in server | Client in server package |
 |------------|:------------------------:|:------------------------:|:------------------------:|
 | [next-vite] |            ✅            |            ✅            |            ❌            |
-| [waku]      |            ❌            |            ✅            |            ❌            |
+| [waku]      |            ✅            |            ❓            |            ❌            |
 | [lazarv]    |            ❌            |            ❌            |            ❌            |
-| [jacob]     |            ❌            |            ✅            |            ❌            |
+| [jacob]     |            ✅            |            ❌            |            ❌            |
 
-✅: optimized, ❌: not optimized
+✅: optimized, ❌: not optimized, ❓: not sure
 
 Notably it's not impossible to optimize the 3rd case (client in server package) since Vite's deps optimization works based on
 package exports entries.
