@@ -1,6 +1,6 @@
 # rsc-tests
 
-This repository compares Vite RSC frameworks to determine if dependency optimization is applied
+This repository compares Vite RSC frameworks on how dependency optimization is applied
 to client components provided by external packages.
 
 There are two demo packages:
@@ -28,10 +28,10 @@ Three test cases are:
 
 ✅: optimized, ❌: not optimized, ❓: not sure
 
-Notably it's not impossible to optimize the 3rd case (client in server package) since Vite's deps optimization works based on
+Notably it's not possible to optimize the 3rd case (client in server package) since Vite's deps optimization works based on
 package exports entries.
 
-Due to this behavior, there are some issues related to CJS support and dual modules.
+Due to this behavior, there are some issues related to CJS support and dual modules, which are found in the next table below.
 The demo packages are taken from https://github.com/hi-ogawa/vite-plugins/tree/main/packages/react-server/examples/basic/deps.
 
 |            | cjs | cjs2 | context | context2 | context3 |
@@ -43,6 +43,16 @@ The demo packages are taken from https://github.com/hi-ogawa/vite-plugins/tree/m
 | jacob      |  ❌  |  ❌  |    ✅   |    ✅    |    ❌    |
 
 ✅: working, ❌: not working, ❓: not sure
+
+## how to run
+
+```sh
+cd <dir>
+pnpm i
+pnpm dev
+```
+
+![image](https://github.com/user-attachments/assets/2e6c61c5-64a3-4365-a0b5-33985716d280)
 
 ## notes
 
