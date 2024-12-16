@@ -6,12 +6,9 @@ export async function Router() {
 	const pathname = parsed.pathname.replace(/\/$/, "") || "/";
 
 	const routes = {
-		// @ts-ignore
-		"/client-in-server-package": () => import("./client-in-server-package/page.jsx"),
-		// @ts-ignore
-		"/client-package-in-client": () => import("./client-package-in-client/page.jsx"),
-		// @ts-ignore
-		"/client-package-in-server": () => import("./client-package-in-server/page.jsx")
+		"/client-in-server-package": () => import("./client-in-server-package.js"),
+		"/client-package-in-client": () => import("./client-package-in-client.js"),
+		"/client-package-in-server": () => import("./client-package-in-server.js")
 	};
 
 	const route = await routes[pathname as "/client-in-server-package"]?.();

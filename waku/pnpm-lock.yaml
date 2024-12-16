@@ -14,6 +14,12 @@ importers:
       '@hiogawa/test-dep-context':
         specifier: hi-ogawa/vite-plugins#path:/packages/react-server/examples/basic/deps/context
         version: https://codeload.github.com/hi-ogawa/vite-plugins/tar.gz/c250fc593befde3b691437895ce87394969a6c36#path:/packages/react-server/examples/basic/deps/context(react@19.0.0)
+      '@vitejs/test-dep-client':
+        specifier: file:../fixtures/test-dep-client
+        version: file:../fixtures/test-dep-client(react@19.0.0)
+      '@vitejs/test-dep-server':
+        specifier: file:../fixtures/test-dep-server
+        version: file:../fixtures/test-dep-server(react@19.0.0)
       react:
         specifier: 19.0.0
         version: 19.0.0
@@ -507,6 +513,16 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0
+
+  '@vitejs/test-dep-client@file:../fixtures/test-dep-client':
+    resolution: {directory: ../fixtures/test-dep-client, type: directory}
+    peerDependencies:
+      react: '*'
+
+  '@vitejs/test-dep-server@file:../fixtures/test-dep-server':
+    resolution: {directory: ../fixtures/test-dep-server, type: directory}
+    peerDependencies:
+      react: '*'
 
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
@@ -1334,6 +1350,14 @@ snapshots:
       vite: 5.4.10(@types/node@22.10.2)(terser@5.37.0)
     transitivePeerDependencies:
       - supports-color
+
+  '@vitejs/test-dep-client@file:../fixtures/test-dep-client(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
+
+  '@vitejs/test-dep-server@file:../fixtures/test-dep-server(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:

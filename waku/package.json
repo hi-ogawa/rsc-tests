@@ -11,6 +11,8 @@
   "dependencies": {
     "@hiogawa/test-dep-cjs": "hi-ogawa/vite-plugins#path:/packages/react-server/examples/basic/deps/cjs",
     "@hiogawa/test-dep-context": "hi-ogawa/vite-plugins#path:/packages/react-server/examples/basic/deps/context",
+    "@vitejs/test-dep-client": "file:../fixtures/test-dep-client",
+    "@vitejs/test-dep-server": "file:../fixtures/test-dep-server",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-server-dom-webpack": "19.0.0",
