@@ -4,6 +4,21 @@ import { url } from "./server-context.js";
 export async function Router() {
 	const parsed = url();
 	const pathname = parsed.pathname.replace(/\/$/, "") || "/";
+
+	const routes = {
+		// @ts-ignore
+		"/client-in-server-package": () => import("./client-in-server-package/page.jsx"),
+		// @ts-ignore
+		"/client-package-in-client": () => import("./client-package-in-client/page.jsx"),
+		// @ts-ignore
+		"/client-package-in-server": () => import("./client-package-in-server/page.jsx")
+	};
+
+	const route = await routes[pathname as "/client-in-server-package"]?.();
+	if (route) {
+		return <route.default />;
+	}
+
 	switch (pathname) {
 		case "/":
 			return <Home />;

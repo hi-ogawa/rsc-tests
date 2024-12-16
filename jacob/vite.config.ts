@@ -18,6 +18,8 @@ export default defineConfig({
 		server: {
 			resolve: {
 				noExternal: [
+					'@vitejs/test-dep-client',
+					'@vitejs/test-dep-server',
 					'@hiogawa/test-dep-cjs',
 					'@hiogawa/test-dep-cjs/*',
 					'@hiogawa/test-dep-context',
