@@ -14,6 +14,8 @@
 		"@jacob-ebey/react-server-dom-vite": "19.0.0-experimental.14",
 		"@jacob-ebey/vite-react-server-dom": "0.0.6",
 		"@mjackson/node-fetch-server": "0.5.0",
+		"@vitejs/test-dep-client": "file:../fixtures/test-dep-client",
+		"@vitejs/test-dep-server": "file:../fixtures/test-dep-server",
 		"compression": "^1.7.5",
 		"express": "^4.21.2",
 		"react": "^19.0.0",

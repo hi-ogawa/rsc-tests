@@ -17,6 +17,12 @@ importers:
       '@lazarv/react-server':
         specifier: 0.0.0-experimental-a70e816-20241208-639a9329
         version: 0.0.0-experimental-a70e816-20241208-639a9329(@types/node@22.10.2)(rollup@4.28.1)(terser@5.37.0)(webpack@5.97.1)
+      '@vitejs/test-dep-client':
+        specifier: file:../fixtures/test-dep-client
+        version: file:../fixtures/test-dep-client(react@0.0.0-experimental-204a551e-20240926)
+      '@vitejs/test-dep-server':
+        specifier: file:../fixtures/test-dep-server
+        version: file:../fixtures/test-dep-server(react@0.0.0-experimental-204a551e-20240926)
 
 packages:
 
@@ -864,6 +870,16 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0
+
+  '@vitejs/test-dep-client@file:../fixtures/test-dep-client':
+    resolution: {directory: ../fixtures/test-dep-client, type: directory}
+    peerDependencies:
+      react: '*'
+
+  '@vitejs/test-dep-server@file:../fixtures/test-dep-server':
+    resolution: {directory: ../fixtures/test-dep-server, type: directory}
+    peerDependencies:
+      react: '*'
 
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
@@ -2955,6 +2971,14 @@ snapshots:
       vite: 6.0.0-alpha.18(@types/node@22.10.2)(sass@1.83.0)(terser@5.37.0)
     transitivePeerDependencies:
       - supports-color
+
+  '@vitejs/test-dep-client@file:../fixtures/test-dep-client(react@0.0.0-experimental-204a551e-20240926)':
+    dependencies:
+      react: 0.0.0-experimental-204a551e-20240926
+
+  '@vitejs/test-dep-server@file:../fixtures/test-dep-server(react@0.0.0-experimental-204a551e-20240926)':
+    dependencies:
+      react: 0.0.0-experimental-204a551e-20240926
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:

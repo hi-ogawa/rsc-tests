@@ -23,6 +23,12 @@ importers:
       '@mjackson/node-fetch-server':
         specifier: 0.5.0
         version: 0.5.0
+      '@vitejs/test-dep-client':
+        specifier: file:../fixtures/test-dep-client
+        version: file:../fixtures/test-dep-client(react@19.0.0)
+      '@vitejs/test-dep-server':
+        specifier: file:../fixtures/test-dep-server
+        version: file:../fixtures/test-dep-server(react@19.0.0)
       compression:
         specifier: ^1.7.5
         version: 1.7.5
@@ -503,6 +509,16 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0
+
+  '@vitejs/test-dep-client@file:../fixtures/test-dep-client':
+    resolution: {directory: ../fixtures/test-dep-client, type: directory}
+    peerDependencies:
+      react: '*'
+
+  '@vitejs/test-dep-server@file:../fixtures/test-dep-server':
+    resolution: {directory: ../fixtures/test-dep-server, type: directory}
+    peerDependencies:
+      react: '*'
 
   accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
@@ -1484,6 +1500,14 @@ snapshots:
       vite: 6.0.3(@types/node@22.10.2)
     transitivePeerDependencies:
       - supports-color
+
+  '@vitejs/test-dep-client@file:../fixtures/test-dep-client(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
+
+  '@vitejs/test-dep-server@file:../fixtures/test-dep-server(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
 
   accepts@1.3.8:
     dependencies:

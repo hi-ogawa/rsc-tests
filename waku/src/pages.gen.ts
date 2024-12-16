@@ -5,6 +5,9 @@ import type { getConfig as Index_getConfig } from './pages/index';
 type Page = {
   DO_NOT_USE_pages:| {path: '/cjs'; render: 'dynamic'}
 | {path: '/cjs2'; render: 'dynamic'}
+| {path: '/client-in-server-package'; render: 'dynamic'}
+| {path: '/client-package-in-client'; render: 'dynamic'}
+| {path: '/client-package-in-server'; render: 'dynamic'}
 | {path: '/context'; render: 'dynamic'}
 | {path: '/context2'; render: 'dynamic'}
 | {path: '/context3-client'; render: 'dynamic'}
