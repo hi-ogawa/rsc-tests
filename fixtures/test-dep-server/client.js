@@ -6,14 +6,22 @@ export function TestClientInServerPackage() {
 	return React.createElement(
 		"span",
 		null,
-		`[client in server package (hydrated: ${Number(useHydrated())}) (optimized: )]`,
+		`[client in server package (hydrated: ${useHydrated()}) (optimized: ${useOptimized()})]`,
 	);
 }
 
 function useHydrated() {
 	return React.useSyncExternalStore(
 		React.useCallback(() => () => {}, []),
-		() => true,
-		() => false,
+		() => "1",
+		() => "0",
+	);
+}
+
+function useOptimized() {
+	return React.useSyncExternalStore(
+		React.useCallback(() => () => {}, []),
+		() => (import.meta.url.includes("/.vite/") ? "1" : "0"),
+		() => "?",
 	);
 }
