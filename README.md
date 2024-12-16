@@ -19,12 +19,12 @@ Three test cases are:
 - [Client in server package](./next-vite/app/client-in-server-package/page.jsx)
   - Import `@vitejs/test-dep-server` in the user app's server component
 
-|          | Client package in server | Client package in client | Client in server package |
-|----------|:------------------------:|:------------------------:|:------------------------:|
-| next-vite|            ✅            |            ✅            |            ❌            |
-| waku     |            ❌            |            ✅            |            ❌            |
-| lazarv   |            ❌            |            ❌            |            ❌            |
-| jacob    |            ❌            |            ✅            |            ❌            |
+|            | Client package in server | Client package in client | Client in server package |
+|------------|:------------------------:|:------------------------:|:------------------------:|
+| [next-vite] |            ✅            |            ✅            |            ❌            |
+| [waku]      |            ❌            |            ✅            |            ❌            |
+| [lazarv]    |            ❌            |            ❌            |            ❌            |
+| [jacob]     |            ❌            |            ✅            |            ❌            |
 
 ✅: optimized, ❌: not optimized
 
@@ -48,3 +48,8 @@ The demo packages are taken from https://github.com/hi-ogawa/vite-plugins/tree/m
 
 - https://github.com/hi-ogawa/vite-plugins/issues/379
   - how `next-vite` supports "client package in server" for deps optimization can be found here.
+
+[next-vite]: https://github.com/hi-ogawa/vite-plugins/tree/main/packages/react-server
+[waku]: https://github.com/dai-shi/waku
+[lazarv]: https://github.com/lazarv/react-server
+[jacob]: https://github.com/facebook/react/pull/31768
