@@ -8,8 +8,7 @@ There are two demo packages:
 - [`@vitejs/test-dep-client`](./fixtures/test-dep-client)
   - The export entry `test-dep-client/index.js` has `"use client"`
 - [`@vitejs/test-dep-server`](./fixtures/test-dep-server)
-  - The export entry `test-dep-server/index.js` doesn't have `"use client"`
-  - `test-dep-server/index.js` imports `./client.js`, which has `"use client"`
+  - The export entry `test-dep-server/index.js` doesn't have `"use client"`, but internally imports `./client.js` which has `"use client"`.
 
 Three test cases are:
 
@@ -27,12 +26,15 @@ Three test cases are:
 | lazarv   |            ❌            |            ❌            |            ❌            |
 | jacob    |            ❌            |            ✅            |            ❌            |
 
-(✅: optimized, ❌: not optimized)
+✅: optimized, ❌: not optimized
 
-Due to such behavior, there are some issues related to CJS support, dual modules.
+Notably it's not impossible to optimize the 3rd case (client in server package) since Vite's deps optimization works based on
+package exports entries.
+
+Due to this behavior, there are some issues related to CJS support and dual modules.
 The demo packages are taken from https://github.com/hi-ogawa/vite-plugins/tree/main/packages/react-server/examples/basic/deps.
 
-|            | CJS | CJS2 | Context | Context2 | Context3 |
+|            | cjs | cjs2 | context | context2 | context3 |
 |------------|:---:|:----:|:-------:|:--------:|:--------:|
 | next       |  ✅  |  ✅  |    ✅   |    ✅    |    ✅    |
 | next-vite  |  ❌  |  ✅  |    ❌   |    ✅    |    ✅    |
@@ -40,8 +42,9 @@ The demo packages are taken from https://github.com/hi-ogawa/vite-plugins/tree/m
 | lazarv     |  ❌  |  ❌  |    ✅   |    ✅    |    ❌    |
 | jacob      |  ❌  |  ❌  |    ✅   |    ✅    |    ❌    |
 
-(✅: working, ❌: not working, ❓: not sure)
+✅: working, ❌: not working, ❓: not sure
 
 ## notes
 
 - https://github.com/hi-ogawa/vite-plugins/issues/379
+  - how `next-vite` supports "client package in server" for deps optimization can be found here.
