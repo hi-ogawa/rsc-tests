@@ -22,7 +22,7 @@ Three test cases are:
 |            | Client package in client | Client package in server | Client in server package |
 |------------|:------------------------:|:------------------------:|:------------------------:|
 | [next-vite] |            ✅            |            ✅            |            ❌            |
-| [waku]      |            ✅            |            ❓            |            ❌            |
+| [waku]      |            ✅            |            ✅            |            ❌            |
 | [lazarv]    |            ❌            |            ❌            |            ❌            |
 | [jacob]     |            ✅            |            ❌            |            ❌            |
 
@@ -38,7 +38,7 @@ The demo packages are taken from https://github.com/hi-ogawa/vite-plugins/tree/m
 |------------|:---:|:----:|:-------:|:--------:|:--------:|
 | next       |  ✅  |  ✅  |    ✅   |    ✅    |    ✅    |
 | next-vite  |  ❌  |  ✅  |    ❌   |    ✅    |    ✅    |
-| waku       |  ❌  |  ❌  |    ❓   |    ❓    |    ❓    |
+| waku       |  ❌  |  ✅  |    ✅   |    ✅    |    ✅    |
 | lazarv     |  ❌  |  ❌  |    ✅   |    ✅    |    ❌    |
 | jacob      |  ❌  |  ❌  |    ✅   |    ✅    |    ❌    |
 

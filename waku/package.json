@@ -9,19 +9,20 @@
     "start": "waku start"
   },
   "dependencies": {
-    "@hiogawa/test-dep-cjs": "hi-ogawa/vite-plugins#path:/packages/react-server/examples/basic/deps/cjs",
-    "@hiogawa/test-dep-context": "hi-ogawa/vite-plugins#path:/packages/react-server/examples/basic/deps/context",
+    "@hiogawa/test-dep-cjs": "github:hi-ogawa/vite-plugins#path:/packages/react-server/examples/basic/deps/cjs",
+    "@hiogawa/test-dep-context": "github:hi-ogawa/vite-plugins#path:/packages/react-server/examples/basic/deps/context",
     "@vitejs/test-dep-client": "file:../fixtures/test-dep-client",
     "@vitejs/test-dep-server": "file:../fixtures/test-dep-server",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "react-server-dom-webpack": "19.0.0",
-    "waku": "0.21.8"
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-server-dom-webpack": "19.1.1",
+    "waku": "0.24.0"
   },
   "devDependencies": {
-    "@types/react": "19.0.1",
-    "@types/react-dom": "19.0.1",
-    "typescript": "5.7.2"
+    "@types/react": "19.1.9",
+    "@types/react-dom": "19.1.7",
+    "typescript": "5.9.2",
+    "vite-plugin-inspect": "^11.3.2"
   },
   "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }
